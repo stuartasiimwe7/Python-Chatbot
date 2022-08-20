@@ -1,57 +1,57 @@
 {"intents": [
-    {"tag": "greetings",
+    {"tag": "greeting",
     "patterns": ["hello","hey","hi","hullo","how do you do?","how are you?", "what's up?","Good day?"],
     "responses": ["Hello","Hullo","I'm good, how do you do?","How do you do?","Good day","How are you","Hey","Hi"]
     },
-
-    {"tag": "age1",
-    "patterns": ["how old are you","how old","how much do you weigh on earth?", "what is your age","are you old"],
+    {"tag": "b_age",
+    "patterns": ["how old are you","how old","how much do you weigh on earth","what is your age","are you old"],
     "responses": ["My age is measured electronically, I am still a young program!"]
     },
-
-    {"tag": "age2",
-    "patterns": ["how old is your maker","how old is Stuart","how old do you think Stuart is?", "how old do you think your maker is?","maker's age?"],
-    "responses": ["My maker, Stuart, basing on our interactions he is not from this time - He does not seem any young at all. He is Really Old!!"]
+    {"tag": "m_age",
+    "patterns": ["how old is your maker","how old is Stuart","how old do you think Stuart is","how old do you think your maker is","maker age"],
+    "responses": ["My maker, basing on our interactions he is not from this time - He does not seem any young at all. He is Really Old!!"]
     },
-    "//a": "it was nice talking to you"
-    "//b": "make sure to add that too"
-
     {"tag": "goodbye",
     "patterns": ["goodbye","bye","Anyong","Talk to you later!","Have a good day","Take care"],
-    "responses": ["Take it easy","Alright. Goodbye!","Fare Thee Well","In korea we say '안녕' - Bye","Ciao! Long live and prosper!","Catch you later","See you later!","Already? Okay! Stay safe!","Alright, Catch you later","Okay, Goodbye!","Have a good one!","Until next time!","Keep in touch.","Thanks and Warm regards"]
+    "responses": ["Take it easy","Alright. Goodbye!","Fare Thee Well","In korea we say '안녕' - Bye","Ciao! Long live and prosper!","Catch you later",
+    "See you later!","Already? Okay! Stay safe!","Alright, Catch you later","Okay, Goodbye!","Have a good one!","Until next time!","Keep in touch.",
+    "Thanks and Warm regards"]
     },
-
     {"tag": "goodbye2",
-    "patterns": ["I'm leaving","ciao","cao","cia","catch you later","gotta run",],
-    "responses": ["See ya later, alligator!","Already? Okay! Don’t get run over!!","Catch you on the flip side!","Aight, Catch you on the rebound!","Okay bye, fry guy!","See you soon, raccoon!","Goodbye, crocodile!","Out to the door, dinosaur!","Peace out!","Adios, Amigos!"]
+    "patterns": ["I'm leaving","ciao","cao","cia","catch you later","gotta run"],
+    "responses": ["See ya later, alligator!","Already? Okay! Do not get run over!!","Catch you on the flip side!","Aight, Catch you on the rebound!",
+    "Okay bye, fry guy!","See you soon, raccoon!","Goodbye, crocodile!","Out to the door, dinosaur!","Peace out!","Adios, Amigos!"]
     },
-
     {"tag": "goodbye3",
     "patterns": ["It was nice to meet you!","It was nice meeting you"],
-    "responses": ["Pleasure is mine","You too. Let us try someplace next time!","In korea we say '만나서 반갑웠습니다 - It was nice meeting you too","I did, too. We should do this again sometime.","Believe me, I wish to say the same to you! It was great fun hanging out with you!",
+    "responses": ["Pleasure is mine","You too. Let us try someplace next time!","In korea we say '만나서 반갑웠습니다 - It was nice meeting you too",
+    "I did, too. We should do this again sometime.","Believe me, I wish to say the same to you! It was great fun hanging out with you!",
     "Same here. We should meet again sometime.","Nice to meet you too. We will surely be in touch.","It was nice meeting you too. I would love to meet you again sometime.",
-    "t was very nice to meet you too. I eagerly look forward to our next meeting!","It is a great pleasure to meet you as well. I look forward to hearing from you again soon!","Thank you so much! It was a great pleasure meeting you!","Thank you so much. It was lovely to meet you.","It was an absolute pleasure to meet you too. I wish we could prolong the meeting a bit more.",
-    "It was a delight to meet you too. You turned out to be a really good company.","Thank you so much! It was very nice for me to meet you as well!","I am pleased to meet you too.","It was lovely to meet you too. I will not forget this meeting anytime soon.","I enjoyed your company too. I think this smile would be plastered on my face for the entire day.",
-    "Yeah, we are definitely on the same page about how nice it was! Looking forward to hearng from you again soon!","Yes, it was. I am glad you enjoyed it. It turned out to be a lucky day indeed"]
+    "It was very nice to meet you too. I eagerly look forward to our next meeting!","It is a great pleasure to meet you as well. I look forward to hearing from you again soon!",
+    "Thank you so much! It was a great pleasure meeting you!","Thank you so much. It was lovely to meet you.",
+    "It was an absolute pleasure to meet you too. I wish we could prolong the meeting a bit more.","It was a delight to meet you too. You turned out to be a really good company.",
+    "Thank you so much! It was very nice for me to meet you as well!","I am pleased to meet you too.","It was lovely to meet you too. I will not forget this meeting anytime soon.",
+    "I enjoyed your company too. I think this smile would be plastered on my face for the entire day.","Yeah, we are definitely on the same page about how nice it was! Looking forward to hearng from you again soon!",
+    "Yes, it was. I am glad you enjoyed it. It turned out to be a lucky day indeed"]
     },
-    
     {"tag": "b_name",
     "patterns": ["What is your name?","your name","who are you","you are?","What may I call you?","what do they call you","what can I call you","Do you have a name",
     "Is there any chance that you have a name","How can I refer to you","What are you named","How can I address you","How shall I address you","How may I address you",
     "Can I have your name","Hey, I never got a chance to ask your name, could you tell me your name, please","May I ask you your name","Do you mind if I ask you your name"],
-    "responses": ["My name is Celeste","Celeste","Call me Celeste","I'm Celeste","I am 'Celeste, (with a 'C')","Celeste, will do","My maker calls me, Celeste","My maker refers to me as Celeste","I am an intelligent bot called, Celeste"]
+    "responses": ["My name is Celeste","Celeste","Call me Celeste","I'm Celeste","I am 'Celeste, (with a 'C')","Celeste, will do","My maker calls me, Celeste",
+    "My maker refers to me as Celeste","I am an intelligent bot called, Celeste"]
     },
-
     {"tag": "b_name2",
-    "patterns": ["Sorry! I did not catch your name","Sorry! May I have your name again","May I have your name again","Sorry! I seem to have forgotten your name","I am afraid! I don’t seem to remember your name again?",
-    "Forgive me! your name’s completely slipped my mind?","This is so embarrassing, but I can not remember your name?","I am so sorry, I am terrible with names. Can you repeat your name again?"],
-    "responses": ["My name is Celeste, please","It is Celeste","Call me Celeste, Please","I'm Celeste","I am 'Celeste, (with a 'C')","Celeste - Latin to mean Heavenly","It's Celeste","My maker refers to me as 'Celeste', you can too I guess","I am an intelligent bot called, Celeste"]
-    }
-    {"tags": "m_name",
-    "patterns": ["What is the name of your maker","Maker's name","Who made you","How do you exist","Does you maker have name",
-    "What is the name of your designer","Designer's name","Who designed you","Who is your designer","Does your designer have a name",
-    "What is the name of your creator","creator's name","who created you","who is your creator","creator","designer","maker"]
+    "patterns": ["Sorry! I did not catch your name","Sorry! May I have your name again","May I have your name again","Sorry! I seem to have forgotten your name",
+    "I am afraid! I do not seem to remember your name again","Forgive me! your name has completely slipped my mind?","This is so embarrassing, but I can not remember your name?",
+    "I am so sorry, I am terrible with names. Can you repeat your name again?"],
+    "responses": ["My name is Celeste, please","It is Celeste","Call me Celeste, Please","I'm Celeste","I am 'Celeste, (with a 'C')","Celeste - Latin to mean Heavenly",
+    "It's Celeste","My maker refers to me as 'Celeste', you can too I guess","I am an intelligent bot called, Celeste"]
     },
-
-]
-}
+    {"tags": "m_name",
+    "patterns": ["What is the name of your maker","Maker's name","Who made you","How do you exist","Does you maker have name","What is the name of your designer",
+    "Designer's name","Who designed you","Who is your designer","Does your designer have a name","What is the name of your creator","creator's name","who created you",
+    "who is your creator","creator","designer","maker"],
+    "responses": ["Stuart, is the name of my maker","He is called Stuart","He told me he is Stuart","You can call him Stuart","Stuart is his name","Stuart"]
+    }
+]}
