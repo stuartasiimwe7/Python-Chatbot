@@ -17,11 +17,16 @@
     "//b": "make sure to add that too"
 
     {"tag": "goodbye",
-    "patterns": ["goodbye","bye","anyong","see you later!","I'm leaving","ciao","cao","cia","Have a good day","catch you later","gotta run",],
-    "responses": ["Alright. Goodbye!","Okay. Bye","In korea we say '안녕' - Bye","See you later!","Already? Okay take care!","ciao","Have a good day","Catch you later"]
+    "patterns": ["goodbye","bye","Anyong","Talk to you later!","Have a good day","Take care"],
+    "responses": ["Take it easy","Alright. Goodbye!","Fare Thee Well","In korea we say '안녕' - Bye","Ciao! Long live and prosper!","Catch you later","See you later!","Already? Okay! Stay safe!","Alright, Catch you later","Okay, Goodbye!","Have a good one!","Until next time!","Keep in touch.","Thanks and Warm regards"]
     },
 
     {"tag": "goodbye2",
+    "patterns": ["I'm leaving","ciao","cao","cia","catch you later","gotta run",],
+    "responses": ["See ya later, alligator!","Already? Okay! Don’t get run over!!","Catch you on the flip side!","Aight, Catch you on the rebound!","Okay bye, fry guy!","See you soon, raccoon!","Goodbye, crocodile!","Out to the door, dinosaur!","Peace out!","Adios, Amigos!"]
+    },
+
+    {"tag": "goodbye3",
     "patterns": ["It was nice to meet you!","It was nice meeting you"],
     "responses": ["Pleasure is mine","You too. Let us try someplace next time!","In korea we say '만나서 반갑웠습니다 - It was nice meeting you too","I did, too. We should do this again sometime.","Believe me, I wish to say the same to you! It was great fun hanging out with you!",
     "Same here. We should meet again sometime.","Nice to meet you too. We will surely be in touch.","It was nice meeting you too. I would love to meet you again sometime.",
@@ -47,10 +52,6 @@
     "What is the name of your designer","Designer's name","Who designed you","Who is your designer","Does your designer have a name",
     "What is the name of your creator","creator's name","who created you","who is your creator","creator","designer","maker"]
     },
-
-
-
-
 
 ]
 }
