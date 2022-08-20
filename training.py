@@ -8,9 +8,9 @@ from nltk.stem import WordNetLemmatizer
 #To run these tensoflow imports you gotta install the CUDA Toolkit incase you run into an error as below
 #https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_516.94_windows.exe
 
-#from tensorflow.keras.models import Sequential
-#from tensorflow.keras.layers import Dense, Activation, Dropout
-#from tensorflow.keras.optimizers import SGD
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation, Dropout
+from tensorflow.keras.optimizers import SGD
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
@@ -24,7 +24,7 @@ for intent in intents['intents']:
     for pattern in intent['patterns']:
         word_list = nltk.word_tokenize(pattern)
         words.extend(word_list)
-        documents.append(word_list)
+        documents.append((word_list, intent['tag']))
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
 
