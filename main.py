@@ -3,8 +3,8 @@ from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
 import numpy as np
-#import tflearn
-#import tensorflow
+import tflearn
+import tensorflow as tf
 import random
 import json
 with open("intents.json") as file:
@@ -21,12 +21,12 @@ for intent in data["intents"]:
         word_list = nltk.word_tokenize(pattern)
         words.extend(word_list)
         docs_x.append(word_list)
-        docs_y.append(intent["tag"])
+        docs_y.append(intent['tag'])
 
         if intent["tag"] not in labels:
-            labels.append(intent["tag"])
+            labels.append(intent['tag'])
 
-words = [stemmer.stem(w.lower()) for w in words if w not in ignore_letters ]
+words = [stemmer.stem(w.lower()) for w in words if w not in ignore_letters]
 words = sorted(list(set(words)))
 
 labels = sorted(labels)
@@ -53,5 +53,15 @@ for x, doc in enumerate(docs_x):
     training.append(bag)
     output.append(output_row)
 
-    #training = numpy.array(training)
+    training =np.array(training)
     output = np.array(output)
+
+    tf.reset_default_graph()
+'''
+net = tflearn.input_data(shape=[None, len(training[0])])
+    net = tflearn.fully_connected(net, 8)
+    #net = tflearn.fully_connected(net, 8)
+    net = tflearn.fully_connected(net, len(output[0]),activation="softmax")
+
+'''
+    

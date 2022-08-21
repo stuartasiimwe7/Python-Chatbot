@@ -1,36 +1,73 @@
-import random
-import json
-import pickle  
-import numpy as np
-
+from nltk.stem.lancaster import LancasterStemmer
+stemmer = LancasterStemmer() 
+import numpy as np 
+#import tensorflow as tf 
+import random 
+import json  
 import nltk
-from nltk.stem import WordNetLemmatizer
-#To run these tensoflow imports you gotta install the CUDA Toolkit incase you run into an error as below
-#https://developer.download.nvidia.com/compute/cuda/11.7.1/local_installers/cuda_11.7.1_516.94_windows.exe
 
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Activation, Dropout
-from tensorflow.keras.optimizers import SGD
-
-lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('intents.json').read())
+with open('intents.json') as json_data:
+    intents = json.load(json_data)
 
 words = []
 classes = []
 documents = []
 ignore_letters = ['?','!','.',',']
 
+# loop through each sentence in our intents patterns
 for intent in intents['intents']:
     for pattern in intent['patterns']:
-        word_list = nltk.word_tokenize(pattern)
-        words.extend(word_list)
-        documents.append((word_list, intent['tag']))
+        # tokenize each word in the sentence
+        w = nltk.word_tokenize(pattern)
+        # add to our words list
+        words.extend(w)
+        # add to documents in our corpus
+        documents.append((w, intent['tag']))
+        # add to our classes list
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
+# stem and lower each word and remove duplicates
+words = [stemmer.stem(w.lower()) for w in words if w not in ignore_words]
+words = sorted(list(set(words)))
+# remove duplicates
+classes = sorted(list(set(classes)))
+training = []
+output = []
+# create an empty array for our output
+output_empty = [0] * len(classes)
+# training set, bag of words for each sentence
+for doc in documents:
+    # initialize our bag of words
+    bag = []
+    # list of tokenized words for the pattern
+    pattern_words = doc[0]
+    # stem each word
+    pattern_words = [stemmer.stem(word.lower()) for word in pattern_words]
+    # create our bag of words array
+    for w in words:
+        bag.append(1) if w in pattern_words else bag.append(0)
+# output is a '0' for each tag and '1' for current tag
+    output_row = list(output_empty)
+    output_row[classes.index(doc[1])] = 1
+training.append([bag, output_row])
+# shuffle our features and turn into np.array
+random.shuffle(training)
+training = np.array(training)
+# create train and test lists
+train_x = list(training[:,0])
+train_y = list(training[:,1])
 
-print(documents)
-words = [lemmatizer.lemmatize(word) for words in words if word not in ignore_letters]
-words = sorted(set(words))
 
-#pickle.dump(words, open('words.pkl','wb'))
-#pickle.dump(words,open('classes.pkl','wb'))
+#MODEL
+import tensorflow as tf
+from tensorflow.keras.layers import Dense,Input,Activation
+from tensorflow.keras.models import Model
+input_layer = Input(shape=(len(train_x[0])))
+layer1 = Dense(100,activation='relu')(input_layer)
+layer2 = Dense(50,activation='relu')(layer1)
+output = Dense(len(train_y[0]),activation='sigmoid')(layer2)
+#Creating a model
+model = Model(inputs=input_layer,outputs=output)
+model.summary()
+model.compile(optimizer="Adam", loss="mse", metrics=['accuracy'])
+model.fit(train_x, train_y, epochs=30, batch_size=1)
