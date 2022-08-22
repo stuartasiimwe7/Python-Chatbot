@@ -1,5 +1,5 @@
 {"intents": [
-    {"tag": "greeting",
+    {"tag": "greetings",
     "patterns": ["hello","hey","hi","hullo","how do you do?","how are you?", "what's up?","Good day?"],
     "responses": ["Hello","Hullo","I'm good, how do you do?","How do you do?","Good day","How are you","Hey","Hi"]
     },
@@ -48,7 +48,7 @@
     "responses": ["My name is Celeste, please","It is Celeste","Call me Celeste, Please","I'm Celeste","I am 'Celeste, (with a 'C')","Celeste - Latin to mean Heavenly",
     "It's Celeste","My maker refers to me as 'Celeste', you can too I guess","I am an intelligent bot called, Celeste"]
     },
-    {"tags": "m_name",
+    {"tag": "m_name",
     "patterns": ["What is the name of your maker","Maker's name","Who made you","How do you exist","Does you maker have name","What is the name of your designer",
     "Designer's name","Who designed you","Who is your designer","Does your designer have a name","What is the name of your creator","creator's name","who created you",
     "who is your creator","creator","designer","maker"],

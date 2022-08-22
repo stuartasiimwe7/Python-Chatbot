@@ -1,10 +1,12 @@
-from nltk.stem.lancaster import LancasterStemmer
-stemmer = LancasterStemmer() 
-import numpy as np 
-#import tensorflow as tf 
 import random 
 import json  
 import nltk
+import pickle
+import numpy as np
+from nltk.stem.lancaster import LancasterStemmer
+from nltk.stem import WordNetLemmatizer
+
+lemmatizer = WordNetLemmatizer() 
 
 with open('intents.json') as json_data:
     intents = json.load(json_data)
@@ -26,6 +28,10 @@ for intent in intents['intents']:
         # add to our classes list
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
+print(documents)
+
+'''
+
 # stem and lower each word and remove duplicates
 words = [stemmer.stem(w.lower()) for w in words if w not in ignore_words]
 words = sorted(list(set(words)))
@@ -71,3 +77,5 @@ model = Model(inputs=input_layer,outputs=output)
 model.summary()
 model.compile(optimizer="Adam", loss="mse", metrics=['accuracy'])
 model.fit(train_x, train_y, epochs=30, batch_size=1)
+
+'''
