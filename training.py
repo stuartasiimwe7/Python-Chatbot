@@ -76,7 +76,7 @@ import tensorflow as tf
 from tensorflow.keras.layers import Dense,Input,Activation
 from tensorflow.keras.models import Model
 
-model = Sequential()
+#model = Sequential()
 input_layer = Input(shape=(len(train_x[0])))
 layer1 = Dense(100,activation='relu')(input_layer)
 layer2 = Dense(50,activation='relu')(layer1)
@@ -85,5 +85,20 @@ output = Dense(len(train_y[0]),activation='sigmoid')(layer2)
 #Creating a model
 model = Model(inputs=input_layer,outputs=output)
 model.summary()
+
 model.compile(optimizer="Adam", loss="mse", metrics=['accuracy'])
 model.fit(train_x, train_y, epochs=30, batch_size=1)
+
+#return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
+def bow(sentence, words, show_details=False):
+    # tokenize the pattern
+    sentence_words = clean_up_sentence(sentence)
+    # bag of words
+    bag = [0]*len(words)
+    for s in sentence_words:
+        for i,w in enumerate(words):
+            if w == s:
+                bag[i] = 1
+                if show_details:
+                    print ("found in bag: %s" % w)
+return(np.array(bag))
