@@ -28,19 +28,25 @@ for intent in intents['intents']:
         # add to our classes list
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
-print(documents)
+#print(documents)
 
-'''
-
-# stem and lower each word and remove duplicates
-words = [stemmer.stem(w.lower()) for w in words if w not in ignore_words]
-words = sorted(list(set(words)))
+# stem and lower each word
+words = [lemmatizer.lemmatize(w) for w in words if w not in ignore_letters]
+words = sorted(set(words))
 # remove duplicates
 classes = sorted(list(set(classes)))
+#print(w)
+
+pickle.dump(words,open('word.pkl','wb'))
+pickle.dump(words,open('classes.pkl','wb'))
+
 training = []
 output = []
+
 # create an empty array for our output
 output_empty = [0] * len(classes)
+
+#training set
 # training set, bag of words for each sentence
 for doc in documents:
     # initialize our bag of words
@@ -48,7 +54,7 @@ for doc in documents:
     # list of tokenized words for the pattern
     pattern_words = doc[0]
     # stem each word
-    pattern_words = [stemmer.stem(word.lower()) for word in pattern_words]
+    pattern_words = [lemmatizer.lemmatize (word.lower()) for word in pattern_words]
     # create our bag of words array
     for w in words:
         bag.append(1) if w in pattern_words else bag.append(0)
@@ -56,26 +62,28 @@ for doc in documents:
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
 training.append([bag, output_row])
+
 # shuffle our features and turn into np.array
 random.shuffle(training)
 training = np.array(training)
+
 # create train and test lists
 train_x = list(training[:,0])
 train_y = list(training[:,1])
 
-
-#MODEL
+#The Model
 import tensorflow as tf
 from tensorflow.keras.layers import Dense,Input,Activation
 from tensorflow.keras.models import Model
+
+model = Sequential()
 input_layer = Input(shape=(len(train_x[0])))
 layer1 = Dense(100,activation='relu')(input_layer)
 layer2 = Dense(50,activation='relu')(layer1)
 output = Dense(len(train_y[0]),activation='sigmoid')(layer2)
+
 #Creating a model
 model = Model(inputs=input_layer,outputs=output)
 model.summary()
 model.compile(optimizer="Adam", loss="mse", metrics=['accuracy'])
 model.fit(train_x, train_y, epochs=30, batch_size=1)
-
-'''
