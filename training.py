@@ -28,14 +28,12 @@ for intent in intents['intents']:
         # add to our classes list
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
-#print(documents)
 
 # stem and lower each word
 words = [lemmatizer.lemmatize(w) for w in words if w not in ignore_letters]
 words = sorted(set(words))
 # remove duplicates
 classes = sorted(list(set(classes)))
-#print(w)
 
 pickle.dump(words,open('word.pkl','wb'))
 pickle.dump(words,open('classes.pkl','wb'))
@@ -93,7 +91,7 @@ model.fit(train_x, train_y, epochs=30, batch_size=1)
 #return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
 def bow(sentence, words, show_details=False):
     # tokenize the pattern
-    sentence_words = clean_up_sentence(sentence)
+    sentence_words = sentence.split()
     # bag of words
     bag = [0]*len(words)
     for s in sentence_words:
