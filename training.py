@@ -6,11 +6,10 @@ import numpy as np
 from nltk.stem.lancaster import LancasterStemmer
 from nltk.stem import WordNetLemmatizer
 
-lemmatizer = WordNetLemmatizer() 
-
 with open('intents.json') as json_data:
     intents = json.load(json_data)
 
+lemmatizer = WordNetLemmatizer() 
 words = []
 classes = []
 documents = []
@@ -143,6 +142,13 @@ def response(sentence, userID='123', show_details=False):
                         # a random response from the intent
                         return print(val)
     results.pop(0)
-ques = input("Hullo There!: ")
-print(classify(ques))
-response(ques)
+
+ #Testing for user input   
+'''
+ postpone the user input test
+
+user_input = input("You are welcome: ")
+print(classify(user_input))
+response(user_input)
+ 
+ '''
