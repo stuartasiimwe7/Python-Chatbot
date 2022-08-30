@@ -143,12 +143,3 @@ def response(sentence, userID='123', show_details=False):
                         return print(val)
     results.pop(0)
 
- #Testing for user input   
-'''
- postpone the user input test
-
-user_input = input("You are welcome: ")
-print(classify(user_input))
-response(user_input)
- 
- '''
