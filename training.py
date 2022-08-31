@@ -34,9 +34,13 @@ words = sorted(set(words))
 # remove duplicates
 classes = sorted(list(set(classes)))
 
+# Pickle module for serializing objects i.e converts python 
+# objects like lists/dictionaries into byte streams (0s & 1s) 
 pickle.dump(words,open('word.pkl','wb'))
 pickle.dump(words,open('classes.pkl','wb'))
 
+
+'''
 training = []
 output = []
 
@@ -142,4 +146,6 @@ def response(sentence, userID='123', show_details=False):
                         # a random response from the intent
                         return print(val)
     results.pop(0)
+
+'''
 
