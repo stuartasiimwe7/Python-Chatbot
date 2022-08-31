@@ -36,8 +36,16 @@ classes = sorted(list(set(classes)))
 
 # Pickle module for serializing objects i.e converts python 
 # objects like lists/dictionaries into byte streams (0s & 1s) 
-pickle.dump(words,open('word.pkl','wb'))
-pickle.dump(words,open('classes.pkl','wb'))
+with open('words.pkl', 'wb') as fh:
+   pickle.dump(words, fh)
+
+with open('classes.pkl', 'wb') as gh:
+   pickle.dump(classes, gh)
+
+
+print("Done")
+#pickle.dump(words,open('word.pkl','wb'))
+#pickle.dump(words,open('classes.pkl','wb'))
 
 
 '''
