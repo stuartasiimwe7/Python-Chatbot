@@ -75,9 +75,11 @@ training.append([bag, output_row])
 # shuffle our features and turn into np.array
 random.shuffle(training)
 training = np.array(training)
-
+#Hullo today is 16th of November
 # create train and test lists
-train_x = list(training[:,0])
+#But i really like this evening
+train_x = list(training[:,0]))
+
 train_y = list(training[:,1])
 
 #The Model
