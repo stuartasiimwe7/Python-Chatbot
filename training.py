@@ -44,10 +44,9 @@ with open('classes.pkl', 'wb') as gh:
 
 
 print("Done")
-#pickle.dump(words,open('word.pkl','wb'))
-#pickle.dump(words,open('classes.pkl','wb'))
 
 
+#To be looked into later on
 '''
 training = []
 output = []

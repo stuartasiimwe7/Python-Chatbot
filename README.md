@@ -6,4 +6,6 @@
 
  Designed or coded in python
  
-Chatbots have a lot of potential in the world of customer service; they save businesses time and money by reducing call center costs and providing quick answers to user questions. They also help companies meet the needs of existing customers by giving them new ways to interact with the company. Businesses would greatly benefit from incorporating chatbots into their services— consider implementing one into your business today! 
+Chatbots have a lot of potential in the world of customer service; they save businesses time and money by reducing call center costs and providing quick answers to user questions. 
+
+They also help companies meet the needs of existing customers by giving them new ways to interact with the company. Businesses would greatly benefit from incorporating chatbots into their services— consider implementing one into your business today! 
