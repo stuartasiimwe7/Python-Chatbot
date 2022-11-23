@@ -1,6 +1,6 @@
 {"intents": [
     {"tag": "greetings",
-    "patterns": ["hello","hey","hi","hullo","how do you do?","how are you?", "what's up?","Good day?"],
+    "patterns": ["hello","hey","hi","hullo","how do you do","how are you", "what's up","Good day"],
     "responses": ["Hello","Hullo","I'm good, how do you do?","How do you do?","Good day","How are you","Hey","Hi"],
     "context_set": ""
     },
